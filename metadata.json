@@ -1,0 +1,7 @@
+{
+  "name": "Olibi Booster",
+  "description": "Olibi Booster - Sponsored by Dj Ambani. Social media growth booster, coin earnings, campaign orders, and wallet.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
