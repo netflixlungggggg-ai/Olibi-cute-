@@ -19,14 +19,13 @@ android {
     targetSdk = 36
     versionCode = 1
     versionName = "1.0"
-
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
   signingConfigs {
     create("release") {
       val keystorePath = System.getenv("KEYSTORE_PATH")
-      if (keystorePath != null && file(keystorePath).exists()) {
+      if (keystorePath!= null && file(keystorePath).exists()) {
         storeFile = file(keystorePath)
         storePassword = System.getenv("STORE_PASSWORD")
         keyAlias = "upload"
@@ -40,13 +39,11 @@ android {
       isCrunchPngs = false
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-      // Only use signing if env vars exist
-      if (System.getenv("KEYSTORE_PATH") != null) {
+      if (System.getenv("KEYSTORE_PATH")!= null) {
         signingConfig = signingConfigs.getByName("release")
       }
     }
     debug {
-      // Use default debug keystore - auto generated
     }
   }
   compileOptions {
